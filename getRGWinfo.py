@@ -389,13 +389,6 @@ elif "api/device/basic_information" in response.text:
     if not passwd:
         passwd = "admin"
     connectB315(baseURL, user, passwd, reboot)
-elif "/html/index.html" in repsonse.text:
-    print("B525? Not implemented, but let's try B315 code")
-    if not user:
-        user = "admin"
-    if not passwd:
-        passwd = "admin"
-    connectB315(baseURL, user, passwd, reboot)
 elif "networkmap_be.js" in response.text:
     print("Vodafone Station detected")
     connectStation(baseURL, reboot)
