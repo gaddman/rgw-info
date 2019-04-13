@@ -345,7 +345,7 @@ if not ip_address(GWIP).is_private:
     print("No RGW connected, default gateway is " + GWIP)
     sys.exit()
 elif proxy:
-    proxyIP = re.search(r"@([0-9a-f\.:]+)", proxy).group(1)  # strip user/pass
+    proxyIP = re.search(r"([0-9a-z\.:]+)\/?$", proxy).group(1)  # strip user/pass
     print("Connected via proxy ({}), default gateway is {}".format(proxyIP, GWIP))
     sys.exit()
 
